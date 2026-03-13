@@ -29,4 +29,18 @@ public class AuthController {
 
         return Result.success(Map.of("token", token));
     }
+
+    /**
+     * 用户注册
+     */
+    @PostMapping("/register")
+    public Result<Void> register(@RequestBody Map<String, String> registerRequest) {
+        String username = registerRequest.get("username");
+        String password = registerRequest.get("password");
+        String email = registerRequest.get("email");
+
+        authService.register(username, password, email);
+
+        return Result.success(null);
+    }
 }
