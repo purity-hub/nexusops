@@ -1,19 +1,32 @@
 package com.nexusops.auth.controller;
 
+import com.nexusops.auth.service.AuthService;
 import com.nexusops.common.web.Result;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * 认证控制器
  */
 @RestController
 @RequestMapping("/auth")
+@RequiredArgsConstructor
 public class AuthController {
 
-    @GetMapping("/login")
-    public Result<String> login() {
-        return Result.success("Login endpoint");
+    private final AuthService authService;
+
+    /**
+     * 用户登录
+     */
+    @PostMapping("/login")
+    public Result<Map<String, String>> login(@RequestBody Map<String, String> loginRequest) {
+        String username = loginRequest.get("username");
+        String password = loginRequest.get("password");
+
+        String token = authService.login(username, password);
+
+        return Result.success(Map.of("token", token));
     }
 }
