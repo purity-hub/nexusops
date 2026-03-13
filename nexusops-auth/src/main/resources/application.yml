@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: nexusops-auth
+  datasource:
+    url: jdbc:postgresql://localhost:5432/nexusops
+    username: postgres
+    password: password
+  redis:
+    host: localhost
+    port: 6379
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+logging:
+  level:
+    com.nexusops: DEBUG

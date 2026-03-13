@@ -3,7 +3,7 @@
 > 让应用运维更智能、更高效
 
 !https://img.shields.io/badge/license-Apache%202.0-blue.svg
-!https://img.shields.io/badge/Java-17%2B-orange.svg
+!https://img.shields.io/badge/Java-8%2B-orange.svg
 !https://img.shields.io/badge/Spring%20Boot-3.1.5-brightgreen.svg
 !https://img.shields.io/badge/PostgreSQL-15%2B-blue.svg
 !https://img.shields.io/badge/Docker-Support-blue.svg
@@ -52,8 +52,8 @@
 
 | 类别 | 技术选型 | 说明 |
 |------|---------|------|
-| **后端框架** | Spring Boot 3.1.5 | 主框架 |
-|  | Spring Cloud 2023.0.0 | 微服务框架 |
+| **后端框架** | Spring Boot 2.7.18 | 主框架 |
+|  | Spring Cloud 2021.0.8 | 微服务框架 |
 |  | Spring Security 6.x | 安全认证 |
 | **数据存储** | PostgreSQL 15 | 主数据库 |
 |  | Redis 7.x | 缓存/分布式锁 |
@@ -74,7 +74,7 @@
 
 ### 环境要求
 
-- JDK 17+
+- JDK 8+
 - Maven 3.8+
 - Docker 20.10+ & Docker Compose
 - Node.js 18+ (仅前端开发需要)
